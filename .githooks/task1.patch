@@ -1,0 +1,12 @@
+diff --git a/src/main/java/com/baeldung/algorithms/bubblesort/BubbleSort.java b/src/main/java/com/baeldung/algorithms/bubblesort/BubbleSort.java
+index b51c4fc..2528032 100644
+--- a/src/main/java/com/baeldung/algorithms/bubblesort/BubbleSort.java
++++ b/src/main/java/com/baeldung/algorithms/bubblesort/BubbleSort.java
+@@ -12,6 +12,7 @@ public class BubbleSort {
+               if (arr[j - 1] > arr[j]) {
+                   int temp = arr[j];
+                   arr[j] = arr[j - 1];
++                  arr[j - 1] = temp;
+               }
+           });
+     }
