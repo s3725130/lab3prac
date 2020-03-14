@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#This hook is invoked when a git-checkout is run after having updated the worktree. The hook is given three parameters: the ref of the previous HEAD, the ref of the new HEAD (which may or may not have changed), and a flag indicating whether the checkout was a branch checkout (changing branches, flag=1) or a file checkout (retrieving a file from the index, flag=0). This hook cannot affect the outcome of git-checkout.
+
+if  [[ "$3" != "1" ]]; then
+    #We are not changing the branch. Nothing to do now.
+    exit 0
+fi
+
+PATH_DIR=.githooks
+# We changed the branch. Lets select the task
+
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+
+if [[ "$CURRENT_BRANCH" == "task1" ]]; then
+    #echo "Preparing $CURRENT_BRANCH ... Done"
+    git apply $PATH_DIR/task1.patch
+    exit 0
+fi
+
+if [[ "$CURRENT_BRANCH" == "task2" ]]; then
+    #echo "Preparing $CURRENT_BRANCH ... Done"
+    git apply $PATH_DIR/task2.patch
+    exit 0
+fi
+
+if [[ "$CURRENT_BRANCH" == "task3" ]]; then
+    #echo "Preparing $CURRENT_BRANCH ... Done"
+    git apply $PATH_DIR/task3.patch
+    git add src/
+    exit 0
+fi
+
+# Task 4 is to create a new branch and push it
+# Task 5 is to merge branches
