@@ -1,0 +1,13 @@
+diff --git a/src/main/java/com/baeldung/algorithms/quicksort/QuickSort.java b/src/main/java/com/baeldung/algorithms/quicksort/QuickSort.java
+index e113cc3..d7df675 100644
+--- a/src/main/java/com/baeldung/algorithms/quicksort/QuickSort.java
++++ b/src/main/java/com/baeldung/algorithms/quicksort/QuickSort.java
+@@ -8,7 +8,7 @@ public class QuickSort {
+             int partitionIndex = partition(arr, begin, end);
+ 
+             // Recursively sort elements of the 2 sub-arrays
+-            quickSort(arr, begin, partitionIndex-1);
++            quickSort(arr, begin, partitionIndex+1);
+             quickSort(arr, partitionIndex+1, end);
+         }
+     }
