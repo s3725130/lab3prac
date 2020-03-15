@@ -31,8 +31,8 @@ Then, open another Git command, and perform the following:
 
 ```
 git config --global user.name “[firstname lastname studentID]”
-git config –global user.email “student.email@student.rmit.edu.au”
-git config –global color.ui auto
+git config –-global user.email “sxxxxxxx@student.rmit.edu.au”
+git config –-global color.ui auto
 git config core.hooksPath .githooks
 ```
 
